@@ -1,0 +1,63 @@
+$COLOR_WHITE: #eeeed2;
+$COLOR_BLACK: #769656;
+$COLOR_AVAILABLE: #3d513d4e;
+$COLOR_SELECTED: #baca44;
+
+.app {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #444;
+}
+
+.board {
+   width: 64*8px;
+   height: 64*8px;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.cell {
+   width: 64px;
+   height: 64px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.black {
+   background-color: $COLOR_BLACK;
+}
+
+.white {
+   background-color: $COLOR_WHITE;
+}
+
+.cell {
+   img {
+      width: 54px;
+      height: 54px;
+      position: relative;
+   }
+}
+
+.selected {
+   background-color: $COLOR_SELECTED;
+}
+
+.available {
+   height: 15px;
+   width: 15px;
+   border-radius: 50%;
+   background-color: $COLOR_AVAILABLE;
+}
+
+.availableToKill {
+   position: absolute;
+   height: 64px;
+   width: 64px;
+   border-radius: 45%;
+   background: radial-gradient(circle at center, transparent 39%, $COLOR_AVAILABLE 84%);
+}
