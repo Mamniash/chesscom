@@ -12,7 +12,7 @@ export class Queen extends Figure {
 
    canMove(target: Cell): boolean {
       if (!super.canMove(target)) return false;
-      // some code
+      //if (this.cell.isEmptyVertical(target)) return true
       return true;
    }
 }

@@ -10,15 +10,15 @@ export class Board {
    cells: Cell[][] = [];
 
    public initCells() {
-      for (let i = 0; i < 8; i++) {
+      for (let x = 0; x < 8; x++) {
          const row: Cell[] = [];
-         for (let j = 0; j < 8; j++) {
-            if ((i + j) % 2 !== 0)
-               row.push(new Cell(this, i, j, Colors.BLACK, null))
+         for (let y = 0; y < 8; y++) {
+            if ((x + y) % 2 !== 0)
+               row.push(new Cell(this, x, y, Colors.BLACK, null))
             else
-               row.push(new Cell(this, i, j, Colors.WHITE, null))
+               row.push(new Cell(this, x, y, Colors.WHITE, null))
          }
-         this.cells.push(row);
+         this.cells.unshift(row);
       }
    }
 
@@ -46,7 +46,7 @@ export class Board {
       for (let i = 0; i < 8; i++) {
          new Pawn(Colors.BLACK, this.getCell(i, 1));
          new Pawn(Colors.WHITE, this.getCell(i, 6));
-      };
+      }
    }
    private addKings() {
       new King(Colors.BLACK, this.getCell(4, 0));

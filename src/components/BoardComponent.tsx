@@ -12,10 +12,11 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard }) => {
    const [selectedCell, setSelectedCell] = useState<Cell | null>(null);
 
    function click(cell: Cell) {
+      console.log(selectedCell);
       if (selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
          selectedCell.moveFigure(cell);
          setSelectedCell(null);
-         updateBoard();
+         //updateBoard();
       } else {
          setSelectedCell(cell);
       }
@@ -34,7 +35,6 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard }) => {
    function updateBoard() {
       const newBoard = board.getCopyBoard();
       setBoard(newBoard);
-      console.log(board);
    }
 
    return (
