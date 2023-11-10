@@ -1,5 +1,5 @@
-import { Cell, Colors } from "../Cell";
 import { Figure, FigureNames } from "./Figure";
+import { Cell, Colors } from "../Cell";
 import blackLogo from "../../assets/black-king.png";
 import whiteLogo from "../../assets/white-king.png";
 
@@ -9,10 +9,9 @@ export class King extends Figure {
       this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
       this.name = FigureNames.KING;
    }
-
    canMove(target: Cell): boolean {
-      if (!super.canMove(target)) return false;
-      // some code
-      return true;
+      if (!super.canMove(target))
+         return false;
+      return true
    }
 }

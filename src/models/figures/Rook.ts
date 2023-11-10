@@ -1,5 +1,5 @@
-import { Cell, Colors } from "../Cell";
 import { Figure, FigureNames } from "./Figure";
+import { Cell, Colors } from "../Cell";
 import blackLogo from "../../assets/black-rook.png";
 import whiteLogo from "../../assets/white-rook.png";
 
@@ -11,8 +11,12 @@ export class Rook extends Figure {
    }
 
    canMove(target: Cell): boolean {
-      if (!super.canMove(target)) return false;
-      // some code
-      return true;
+      if (!super.canMove(target))
+         return false;
+      if (this.cell.isEmptyVertical(target))
+         return true
+      if (this.cell.isEmptyHorizontal(target))
+         return true
+      return false
    }
 }
