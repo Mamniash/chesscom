@@ -15,7 +15,7 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer, swapPl
    const [selectedCell, setSelectedCell] = useState<Cell | null>(null);
 
    function click(cell: Cell) {
-      console.log(selectedCell);
+      // console.log(selectedCell);
       if (selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
          selectedCell.moveFigure(cell);
          setSelectedCell(null);
@@ -44,8 +44,8 @@ const BoardComponent: FC<BoardProps> = ({ board, setBoard, currentPlayer, swapPl
    }
 
    return (
-      <div className="board">
-         <h3>Current player {currentPlayer?.color}</h3>
+      <div className="main">
+         <h3>Current player <span className={currentPlayer?.color}>{currentPlayer?.color}</span></h3>
          <div className="board">
             {board.cells.map((row, index) =>
                <React.Fragment key={index}>

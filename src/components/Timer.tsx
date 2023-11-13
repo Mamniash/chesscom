@@ -8,8 +8,8 @@ interface TimerProps {
 }
 
 const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
-   const [blackTime, setBlackTime] = useState(5)
-   const [whiteTime, setWhiteTime] = useState(5);
+   const [blackTime, setBlackTime] = useState(500)
+   const [whiteTime, setWhiteTime] = useState(500);
    const timer = useRef<null | ReturnType<typeof setInterval>>(null)
 
    useEffect(() => {
@@ -41,18 +41,18 @@ const Timer: FC<TimerProps> = ({ currentPlayer, restart }) => {
    }
 
    const handleRestart = () => {
-      setWhiteTime(5)
-      setBlackTime(5)
+      setWhiteTime(500)
+      setBlackTime(500)
       restart()
    }
 
    return (
-      <div>
-         <div>
-            <button onClick={handleRestart}>Restart game</button>
-         </div>
+      <div className='timer'>
          <h2>Black - {blackTime}</h2>
          <h2>White - {whiteTime}</h2>
+         <div className='restart'>
+            <button onClick={handleRestart}>Restart game</button>
+         </div>
       </div>
    );
 };

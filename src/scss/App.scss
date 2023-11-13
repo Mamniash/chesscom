@@ -3,61 +3,134 @@ $COLOR_BLACK: #769656;
 $COLOR_AVAILABLE: #3d513d4e;
 $COLOR_SELECTED: #baca44;
 
+* {
+   padding: 0;
+   margin: 0;
+}
+
 .app {
+   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
    width: 100vw;
    height: 100vh;
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color: #444;
-}
+   background-color: #D2D2D4;
+   color: #0C151C;
 
-.board {
-   width: 64*8px;
-   height: 64*8px;
-   display: flex;
-   flex-wrap: wrap;
-}
+   .timer {
+      margin-right: 18px;
 
-.cell {
-   width: 64px;
-   height: 64px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
+      .restart {
+         text-align: center;
 
-.black {
-   background-color: $COLOR_BLACK;
-}
+         button {
+            background-color: #E4E5EA;
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+         }
+      }
 
-.white {
-   background-color: $COLOR_WHITE;
-}
+      h2 {
+         text-align: center;
+         font-size: 24px;
+      }
+   }
 
-.cell {
-   img {
-      width: 54px;
-      height: 54px;
-      position: relative;
+   .lost {
+      margin-left: 18px;
+
+      .list {
+         font-size: 24px;
+
+         h3 {
+            margin: 5px 0;
+            text-decoration: underline;
+         }
+
+         div {
+            img {
+               height: 100%;
+            }
+         }
+      }
    }
 }
 
-.selected {
-   background-color: $COLOR_SELECTED;
-}
+.main {
+   h3 {
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 10px;
 
-.available {
-   height: 15px;
-   width: 15px;
-   border-radius: 50%;
-   background-color: $COLOR_AVAILABLE;
-}
+      .white {
+         color: $COLOR_WHITE;
+      }
 
-.availableToKill {
-   position: absolute;
-   height: 64px;
-   width: 64px;
-   border-radius: 45%;
-   background: radial-gradient(circle at center, transparent 39%, $COLOR_AVAILABLE 84%);
+      .black {
+         color: $COLOR_BLACK;
+      }
+
+      span {
+         text-shadow:
+            1px 1px 1px #0C151C,
+            -1px -1px 1px #0C151C,
+            1px -1px 1px #0C151C,
+            -1px 1px 1px #0C151C;
+      }
+   }
+
+   .board {
+      padding: 8px;
+      background-color: #0C151C;
+      border-radius: 10px;
+      width: 64*8px;
+      height: 64*8px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .cell {
+         width: 64px;
+         height: 64px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         img {
+            width: 54px;
+            height: 54px;
+            position: relative;
+         }
+      }
+
+      .black {
+         background-color: $COLOR_BLACK;
+      }
+
+      .white {
+         background-color: $COLOR_WHITE;
+      }
+
+      .selected {
+         background-color: $COLOR_SELECTED;
+      }
+
+      .available {
+         height: 15px;
+         width: 15px;
+         border-radius: 50%;
+         background-color: $COLOR_AVAILABLE;
+      }
+
+      .availableToKill {
+         position: absolute;
+         height: 64px;
+         width: 64px;
+         border-radius: 45%;
+         background: radial-gradient(circle at center, transparent 39%, $COLOR_AVAILABLE 84%);
+      }
+
+   }
 }

@@ -32,27 +32,25 @@ const App = () => {
 
    return (
       <div className="app">
-         <div className="app">
-            <Timer
-               restart={restart}
-               currentPlayer={currentPlayer}
+         <Timer
+            restart={restart}
+            currentPlayer={currentPlayer}
+         />
+         <BoardComponent
+            board={board}
+            setBoard={setBoard}
+            currentPlayer={currentPlayer}
+            swapPlayer={swapPlayer}
+         />
+         <div className='lost'>
+            <LostFigures
+               title="B-Figures"
+               figures={board.lostBlackFigures}
             />
-            <BoardComponent
-               board={board}
-               setBoard={setBoard}
-               currentPlayer={currentPlayer}
-               swapPlayer={swapPlayer}
+            <LostFigures
+               title="W-Figures"
+               figures={board.lostWhiteFigures}
             />
-            <div>
-               <LostFigures
-                  title="Черные фигуры"
-                  figures={board.lostBlackFigures}
-               />
-               <LostFigures
-                  title="Белые фигуры"
-                  figures={board.lostWhiteFigures}
-               />
-            </div>
          </div>
       </div>
    );
