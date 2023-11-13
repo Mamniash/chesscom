@@ -15,12 +15,12 @@ const App = () => {
 
    useEffect(() => {
       restart();
-      setCurrentPlayer(whitePlayer);
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [])
 
    function restart() {
       const newBoard = new Board();
+      setCurrentPlayer(whitePlayer)
       newBoard.initCells();
       newBoard.addFigures();
       setBoard(newBoard);

@@ -2,16 +2,17 @@ import logo from '../../assets/black-king.png'
 import { Cell, Colors } from "../Cell";
 
 export enum FigureNames {
-   FIGURE = "Фигура",
-   KING = "Король",
-   KNIGHT = "Конь",
-   PAWN = "Пешка",
-   QUEEN = "Ферзь",
-   ROOK = "Ладья",
-   BISHOP = "Слон",
+   FIGURE = "FIGURE",
+   KING = "KING",
+   KNIGHT = "KNIGHT",
+   PAWN = "PAWN",
+   QUEEN = "QUEEN",
+   ROOK = "ROOK",
+   BISHOP = "BISHOP",
 }
 
 export class Figure {
+   //static count: number = 0;
    color: Colors;
    logo: typeof logo | null;
    cell: Cell;
@@ -29,10 +30,11 @@ export class Figure {
    }
 
    canMove(target: Cell): boolean {
+      //console.log(++Figure.count);
       if (target.figure?.color === this.color)
          return false
-      if (target.figure?.name === FigureNames.KING)
-         return false
+      //? if (target.figure?.name === FigureNames.KING)
+      //?    return false
       return true;
    }
 
